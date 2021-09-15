@@ -1,0 +1,13 @@
+.idea
+.idea/**
+.vim
+.vim/*
+venv
+*_old345.py
+__pycache__
+__pycache__/*
+/src/result/
+/src/runs/
+/data/*.json
+/data/cached
+!/data/dataset_split.json

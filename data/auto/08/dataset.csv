@@ -1,0 +1,6 @@
+question,id,element_id,answer_start,answer
+How much mileage will be given by fuel economy for Base Style?,au080000100000,11,0,20 MPG
+How much distance is travelled per gallon of fuel used when driving a Base Style?,au080000100001,11,0,20 MPG
+What is the fuel economy of Base Style?,au080000100002,11,0,20 MPG
+What is the volume of fuel for Base Style to travel a distance?,au080000100003,11,0,20 MPG
+What is the fuel efficiency of Base Style?,au080000100004,11,0,20 MPG
