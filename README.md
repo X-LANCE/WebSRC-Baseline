@@ -87,13 +87,23 @@ bash ./script/BERT/H-PLM/eval.sh
 
 If you use any source codes or datasets included in this repository in your work, please cite the corresponding papers. The bibtex are listed below:
 ```text
-[Chen et al. 2021]
-@misc{chen2021websrc,
-      title={WebSRC: A Dataset for Web-Based Structural Reading Comprehension}, 
-      author={Lu Chen and Xingyu Chen and Zihan Zhao and Danyang Zhang and Jiabao Ji and Ao Luo and Yuxuan Xiong and Kai Yu},
-      year={2021},
-      eprint={2101.09465},
-      archivePrefix={arXiv},
-      primaryClass={cs.CL}
+@inproceedings{chen-etal-2021-websrc,
+    title = "{W}eb{SRC}: A Dataset for Web-Based Structural Reading Comprehension",
+    author = "Chen, Xingyu  and
+      Zhao, Zihan  and
+      Chen, Lu  and
+      Ji, JiaBao  and
+      Zhang, Danyang  and
+      Luo, Ao  and
+      Xiong, Yuxuan  and
+      Yu, Kai",
+    booktitle = "Proceedings of the 2021 Conference on Empirical Methods in Natural Language Processing",
+    month = nov,
+    year = "2021",
+    address = "Online and Punta Cana, Dominican Republic",
+    publisher = "Association for Computational Linguistics",
+    url = "https://aclanthology.org/2021.emnlp-main.343",
+    pages = "4173--4185",
+    abstract = "Web search is an essential way for humans to obtain information, but it{'}s still a great challenge for machines to understand the contents of web pages. In this paper, we introduce the task of web-based structural reading comprehension. Given a web page and a question about it, the task is to find an answer from the web page. This task requires a system not only to understand the semantics of texts but also the structure of the web page. Moreover, we proposed WebSRC, a novel Web-based Structural Reading Comprehension dataset. WebSRC consists of 400K question-answer pairs, which are collected from 6.4K web pages with corresponding HTML source code, screenshots, and metadata. Each question in WebSRC requires a certain structural understanding of a web page to answer, and the answer is either a text span on the web page or yes/no. We evaluate various strong baselines on our dataset to show the difficulty of our task. We also investigate the usefulness of structural information and visual features. Our dataset and baselines have been publicly available.",
 }
 ```
