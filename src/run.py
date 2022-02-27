@@ -525,8 +525,7 @@ def main():
         tokenizer.save_pretrained(args.output_dir)
         model.resize_token_embeddings(len(tokenizer))
         if args.method == 'V-PLM':
-            html_config = VConfig(args.method, args.model_type, args.num_node_block, args.cnn_feature_dim,
-                                  **config.__dict__)
+            html_config = VConfig(args, **config.__dict__)
             model = VPLM(model, html_config)
         model.to(args.device)
         global_step, tr_loss = train(args, train_dataset, model, tokenizer)
@@ -586,8 +585,7 @@ def main():
             if global_step and args.eval_to_checkpoint is not None and int(global_step) >= args.eval_to_checkpoint:
                 continue
             if args.method == 'V-PLM':
-                html_config = VConfig(args.method, args.model_type, args.num_node_block, args.cnn_feature_dim,
-                                      **config.__dict__)
+                html_config = VConfig(args, **config.__dict__)
                 model = VPLM(bert_model, html_config)
                 model.load_state_dict(torch.load(os.path.join(checkpoint, 'pytorch_model.bin')))  # confirmed correct
             else:

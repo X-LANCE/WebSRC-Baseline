@@ -74,16 +74,13 @@ class VConfig(PretrainedConfig):
         kwargs (dict): the other configuration which the configuration of the PLM in use needs.
     """
     def __init__(self,
-                 method,
-                 model_type,
-                 num_node_block,
-                 cnn_feature_dim,
+                 args,
                  **kwargs):
         super().__init__(**kwargs)
-        self.method = method
-        self.model_type = model_type
-        self.num_node_block = num_node_block
-        self.cnn_feature_dim = cnn_feature_dim
+        self.method = args.method
+        self.model_type = args.model_type
+        self.num_node_block = args.num_node_block
+        self.cnn_feature_dim = args.cnn_feature_dim
         self.cat_hidden_size = self.hidden_size
         if self.method == 'V-PLM':
             self.cat_hidden_size += self.cnn_feature_dim
