@@ -53,9 +53,12 @@ def convert_csv_to_dict(args):
                     website = {'qas': qas, 'page_id': last['id'][2:-5]}
                     websites.append(website)
                     qas = []
-                answer = {'text'        : current['answer'],
-                          'element_id'  : int(current['element_id']),
-                          'answer_start': int(current['answer_start'])}
+                if 'answer' in current:
+                    answer = {'text'        : current['answer'],
+                              'element_id'  : int(current['element_id']),
+                              'answer_start': int(current['answer_start'])}
+                else:
+                    answer = {}
                 answers.append(answer)
                 last = current
 
