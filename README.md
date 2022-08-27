@@ -85,7 +85,7 @@ bash ./script/BERT/H-PLM/eval.sh
 
 ## Obtain Test Result
 
-The test set without label is public now, available [here][https://websrc-data.s3.amazonaws.com/release_testset.zip], the format of test set is the same with training set (please refer to the Data Format Description section). For test set evaluation, please send your prediction files to  zhao_mengxin@sjtu.edu.cn and chenlusz@sjtu.edu.cn with title "WebSRC Test: \<your model name\>+\<your institution\>". For evaluation, the prediction files should contain two files:
+The test set without label is public now, available [here](https://websrc-data.s3.amazonaws.com/release_testset.zip), the format of test set is the same with training set (please refer to the Data Format Description section). For test set evaluation, please send your prediction files to  zhao_mengxin@sjtu.edu.cn and chenlusz@sjtu.edu.cn with title "WebSRC Test: \<your model name\>+\<your institution\>". For evaluation, the prediction files should contain two files:
 
 ```jsonc
 // prediction.json
