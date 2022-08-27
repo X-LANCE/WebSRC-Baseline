@@ -33,7 +33,7 @@ The dataset for each website will be stored in `dataset.csv` in the directory `{
 
 In `dataset.csv`, each row corresponding to one question-answer data point except the header. The meanings of each column are as follows:
 * `question`: a string, the question of this question-answer data point.
-* `id`: a unique id for this question-answer data point.
+* `id`: a unique id for this question-answer data point. Each `id` has a length 14, the first two characters are the domain indicator, the following two number is the website name. The corresponding page id can be extracted by `id[2:9]`, for example, id "sp160000100001" means this line is created from the *sport* domain, website *16*, and the corresponding page is `1600001.html`.
 * `element_id`: an integer, the tag id (corresponding to the tag's `tid` attribute in the HTML files) of the deepest tag in the DOM tree which contain all the answer. For yes/no question, there is no tag associated with the answer, so the `element_id` is -1.
 * `answer_start`: an integer, the char offset of the answer from the start of the content of the tag specified by `element_id`. Note that before counting this number, we first eliminate all the inner tags in the specified tag and replace all the consecutive whitespaces with one space. For yes/no questions, `answer_start` is 1 for answer "yes" and 0 for answer "no".
 * `answer`: a string, the answer of this question-answer data point.
@@ -82,6 +82,32 @@ The `eval.sh` files which can evaluate all the saved checkpoints on the developm
 ```commandline
 bash ./script/BERT/H-PLM/eval.sh
 ```
+
+## Obtain Test Result
+
+The test set without label is public now, available [here][https://websrc-data.s3.amazonaws.com/release_testset.zip], the format of test set is the same with training set (please refer to the Data Format Description section). For test set evaluation, please send your prediction files to  zhao_mengxin@sjtu.edu.cn and chenlusz@sjtu.edu.cn with title "WebSRC Test: \<your model name\>+\<your institution\>". For evaluation, the prediction files should contain two files:
+
+```json
+# prediction.json
+# A json format file, keys are ids and values are the predicted answers (string).
+{
+  "sp160000100001": "predicted answer",
+  "sp160000100002": "...",
+  ...
+}
+
+# tag_prediction.json
+# A json format file, keys are ids and values are the predicted tag tid (int)
+{
+  "sp160000100001": -1,
+  "sp160000100002": -1,
+  ...
+}
+```
+
+We encourage to submit results from **at least three runs with different random seeds** to reduce the uncertainty of the experiments. Please place prediction files for each runs in different directory and submit a zipped file. The averaged test result will be sent by email.
+
+
 
 ## Reference
 
