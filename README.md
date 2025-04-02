@@ -65,7 +65,7 @@ python dataset_generation.py --root_dir ../data --version websrc1.0
 ```
 The resulting SQuAD-style json files will be placed in the `data` folder.
 
-Furthermore, to run the V-PLM model, the processed cnn features for each tag in the pages can be downloaded from [Amazon s3](https://websrc-data.s3.amazonaws.com/visual-features.xz) or [Baidu Netdisk](https://pan.baidu.com/s/1_KeVmazOdCrU33nhiKUyRg) with the Extraction Code: 'pi5s'.
+Furthermore, to run the V-PLM model, the processed cnn features for each tag in the pages can be downloaded from [Baidu Netdisk](https://pan.baidu.com/s/1_KeVmazOdCrU33nhiKUyRg) with the Extraction Code: 'pi5s'.
 
 [comment]: <> (lack download links)
 
